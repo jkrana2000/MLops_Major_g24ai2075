@@ -1,0 +1,19 @@
+<!-- app/templates/upload.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Olivetti Face Predict</title>
+</head>
+<body>
+  <h2>Upload a face image (jpg/png)</h2>
+  <form method="POST" action="/predict" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if prediction is defined %}
+    <h3>Predicted class: {{ prediction }}</h3>
+  {% endif %}
+</body>
+</html>
